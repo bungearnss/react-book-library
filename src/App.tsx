@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
 import { NavBar } from "./layouts/NavBar";
-import { ExploreTopBooks } from "./layouts/homepage/ExploreTopBooks";
-import { Carousel } from "./layouts/homepage/Carousel";
+import { Footer } from "./layouts/Footer";
+import { HomePage } from "./layouts/homepage/HomePage";
 
 function App() {
   return (
     <div>
       <NavBar />
-      <ExploreTopBooks />
-      <Carousel />
+      <HomePage />
+      <Footer />
     </div>
   );
 }
