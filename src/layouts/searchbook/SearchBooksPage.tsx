@@ -36,10 +36,10 @@ export const SearchBooksPage = () => {
 
       const responseJson = await response.json();
 
-      const responseData = responseJson._embedded.books;
+      const responseData = responseJson.content;
 
-      setTotalAmountOfBooks(responseJson.page.totalElements);
-      setTotalPages(responseJson.page.totalPages);
+      setTotalAmountOfBooks(responseJson.totalElements);
+      setTotalPages(responseJson.totalPages);
 
       const loadedBooks: Book[] = [];
 
@@ -55,6 +55,8 @@ export const SearchBooksPage = () => {
           img: responseData[key].img,
         });
       }
+
+      console.log(`loadedBooks : ${JSON.stringify(loadedBooks)}`)
 
       setBooks(loadedBooks);
       setIsLoading(false);

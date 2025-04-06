@@ -5,6 +5,8 @@ import { Footer } from "./layouts/Footer";
 import { HomePage } from "./layouts/homepage/HomePage";
 import { SearchBooksPage } from "./layouts/searchbook/SearchBooksPage";
 import { Redirect, Route, Switch } from "react-router-dom";
+import { BookCheckoutPage } from "./layouts/checkout/BookCheckoutPage";
+import { ReviewListPage } from "./layouts/review/ReviewListPage";
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path="/search">
             <SearchBooksPage />
+          </Route>
+          <Route path="/reviewlist/:bookId">
+            <ReviewListPage />
+          </Route>
+          <Route path="/checkout/:bookId">
+            <BookCheckoutPage />
           </Route>
         </Switch>
       </div>
