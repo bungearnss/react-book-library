@@ -40,7 +40,6 @@ export const Carousel = () => {
         });
       }
 
-      console.log(`loadedBooks -> ${JSON.stringify(loadedBooks)}`)
       setBooks(loadedBooks);
       setIsLoading(false);
     };
@@ -49,8 +48,6 @@ export const Carousel = () => {
       setHttpError(error.message);
     });
   }, []);
-
-  console.log(`book -> ${JSON.stringify(books)}`)
 
   if (isLoading) {
     return <SpinnerLoading />;

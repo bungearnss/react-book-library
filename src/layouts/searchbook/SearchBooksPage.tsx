@@ -56,8 +56,6 @@ export const SearchBooksPage = () => {
         });
       }
 
-      console.log(`loadedBooks : ${JSON.stringify(loadedBooks)}`)
-
       setBooks(loadedBooks);
       setIsLoading(false);
     };
