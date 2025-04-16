@@ -12,6 +12,7 @@ import { oktaConfig } from "./configs/oktaConfig";
 import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
 import LoginWidget from "./Auth/LoginWidget";
 import { ShelfPage } from "./layouts/shelfpage/ShelfPage";
+import { MessagesPage } from "./layouts/message/MessagesPage";
 
 const oktaAuth = new OktaAuth(oktaConfig);
 
@@ -55,7 +56,10 @@ function App() {
               render={() => <LoginWidget config={oktaConfig} />}
             />
             <Route path="/login/callback" component={LoginCallback} />
-            <SecureRoute path='/shelf'> <ShelfPage/> </SecureRoute>
+            <Route path="/shelf" component={ShelfPage} />
+            {/* <SecureRoute path='/shelf'> <ShelfPage/> </SecureRoute> */}
+            <Route path="/messages" component={MessagesPage} />
+            {/* <SecureRoute path='/messages'> <MessagesPage /> </SecureRoute> */}
           </Switch>
         </div>
         <Footer />
