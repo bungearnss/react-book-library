@@ -14,7 +14,7 @@ export const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark main-color py-3">
       <div className="container-fluid">
-        <span className="navbar-brand">Luv 2 Read</span>
+        <span className="navbar-brand">Book Store</span>
         <button
           className="navbar-toggler"
           type="button"
@@ -45,6 +45,14 @@ export const NavBar = () => {
                 </NavLink>
               </li>
             )}
+            {authState.isAuthenticated &&
+              authState.accessToken?.claims?.userType === "admin" && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/admin">
+                    Admin
+                  </NavLink>
+                </li>
+              )}
           </ul>
           <ul className="navbar-nav ms-auto">
             {!authState.isAuthenticated ? (
